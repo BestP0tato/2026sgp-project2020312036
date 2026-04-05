@@ -1,4 +1,3 @@
-<img width="1177" height="1073" alt="4" src="https://github.com/user-attachments/assets/7516a30e-4f8b-4d88-b4e4-abc1129aefb7" /># 2026sgp-project2020312036
 
 <img width="1173" height="1063" alt="1" src="https://github.com/user-attachments/assets/b805a436-700c-4bfe-9a9e-1dcd457e85a6" />
 
@@ -7,10 +6,25 @@
 <img width="1165" height="1062" alt="2" src="https://github.com/user-attachments/assets/bbb402f3-c677-41f1-9618-504039be1009" />
 
 게임의 메인화면입니다. 하단의 어드벤쳐 버튼을 연타하여 버튼 아래의 게이지를 채울 수 있습니다.
-게이지는 서서히 줄어들고, 끝까지 채울 시 일정량의 자원을 획득합니다.
+게이지는 서서히 줄어들고, 끝까지 채울 시 일정량의 랜덤한 자원을 획득합니다.
 
 <img width="1172" height="1074" alt="3" src="https://github.com/user-attachments/assets/3c975424-a5ff-45c3-9651-05afc62b0b69" />
 
 메인화면의 제작 버튼을 누르면 해당 화면으로 넘어갑니다.
 어드벤쳐 버튼을 클릭해 모은 자원으로 화살표 방향에 따라 상하좌우 버튼을 입력하여 소모품을 제작합니다.
 
+<img width="1177" height="1073" alt="4" src="https://github.com/user-attachments/assets/fb6e6c34-d8d5-4e7a-8a34-199149d75c00" />
+
+메인 화면의 전투 버튼을 누르면 해당 화면으로 넘어갑니다.
+9개의 카드 중 3개씩 3세트의 동일한 그림이 그려진 카드가 있습니다.
+한번에 동일한 3개의 카드를 뒤집어 모든 카드를 뒤집으면 전투 성공입니다.
+
+전투 결과는 메인 화면 중앙에 있던 적의 상태로 확인할 수 있습니다.
+
+<img width="464" height="707" alt="5" src="https://github.com/user-attachments/assets/16508866-201b-4e5b-9d4c-e7877eb22226" />
+
+다음과 같은 화면으로 구상중에 있습니다.
+
+<img width="597" height="625" alt="6" src="https://github.com/user-attachments/assets/b620afe2-71e5-4f54-8ca1-3c6a3400a220" />
+
+제작 화면에서는 키보드가 있는 PC와 달리, 화면 하단에 방향키 키패드를 추가해 조작할 수 있도록 하려고 합니다.
