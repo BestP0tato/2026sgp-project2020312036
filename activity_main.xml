@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvBossName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="흉포한 티노"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/bossHpBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:progress="80"
+        android:progressTint="#FF0000"
+        app:layout_constraintTop_toBottomOf="@+id/tvBossName" />
+
+    <ImageView
+        android:id="@+id/imgMainCharacter"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintTop_toBottomOf="@+id/bossHpBar"
+        app:layout_constraintBottom_toTopOf="@+id/btnBattle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/inventoryBox"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:background="#44000000"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgMainCharacter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgMainCharacter">
+
+        <TextView
+            android:id="@+id/tvRes1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="자원1: 0"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/tvRes2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="자원2: 0"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/tvRes3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="자원3: 0"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAdventure"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="어드벤쳐"
+        app:layout_constraintBottom_toTopOf="@+id/adventureGauge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnCraft"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="제작"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdventure"
+        app:layout_constraintEnd_toEndOf="@+id/btnAdventure" />
+
+    <Button
+        android:id="@+id/btnBattle"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="5dp"
+        android:text="전투"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdventure"
+        app:layout_constraintEnd_toStartOf="@+id/btnCraft" />
+
+    <ProgressBar
+        android:id="@+id/adventureGauge"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="20dp"
+        android:max="100"
+        android:progress="0"
+        android:progressTint="#00FF00"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnAdventure"
+        app:layout_constraintStart_toStartOf="@+id/btnAdventure" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
