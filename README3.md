@@ -12,3 +12,12 @@
 
 마지막으로 수업에 관한 내용으로 스스로 공부할 시간을 만들어 줄 뿐만 아니라 방향성도 제시해 주는 과제를 내주시는 것이 저에게는 매우 긍정적으로 다가왔습니다.
 하지만 혼자 공부한 내용인 만큼 해당 내용이 옳은지에 대한 검증이 필요한데, 이러한 피드백을 과제 평가 같은 것으로 받을 수 있었으면 좋겠다는 생각이 들었습니다.
+<img width="2000" height="1125" alt="스겜프3차_page-0001" src="https://github.com/user-attachments/assets/fce2b8df-09ce-4913-8602-61079f303330" />
+
+<img width="2000" height="1125" alt="스겜프3차_page-0002" src="https://github.com/user-attachments/assets/b160a2c6-a7f3-4501-b804-6877efd59349" />
+
+<img width="2000" height="1125" alt="스겜프3차_page-0003" src="https://github.com/user-attachments/assets/d5f9bf10-7d20-47e9-9acf-7f6b36f8234f" />
+
+<img width="2000" height="1125" alt="스겜프3차_page-0004" src="https://github.com/user-attachments/assets/d28eb65c-6f4d-4daf-9f5a-e37a03758ca0" />
+
+<img width="2000" height="1125" alt="스겜프3차_page-0005" src="https://github.com/user-attachments/assets/d5ffde41-9e07-4b6d-b3a9-1b7a2d03c787" />
