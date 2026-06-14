@@ -2,17 +2,64 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/tuk_campus"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnCheatAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[치트] 자원/책+5"
+        android:textSize="10sp"
+        android:backgroundTint="#FF9800"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnCheatClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[치트] 리셋"
+        android:textSize="10sp"
+        android:backgroundTint="#757575"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnCheatAdd" />
+
+    <Button
+        android:id="@+id/btnCheatDirectAttack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[치트] 즉시투척"
+        android:textSize="10sp"
+        android:backgroundTint="#E91E63"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnCheatClear" />
     <TextView
         android:id="@+id/tvBossName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="흉포한 티노"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="60dp"
         android:layout_marginStart="20dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -23,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:layout_marginHorizontal="20dp"
-        android:progress="80"
+        android:progress="100"
         android:progressTint="#FF0000"
         app:layout_constraintTop_toBottomOf="@+id/tvBossName" />
 
@@ -31,29 +78,32 @@
         android:id="@+id/imgMainCharacter"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/ic_launcher_background"
+        android:layout_margin="20dp"
+        android:src="@drawable/tino_boss"
         app:layout_constraintTop_toBottomOf="@+id/bossHpBar"
-        app:layout_constraintBottom_toTopOf="@+id/btnBattle"
+        app:layout_constraintBottom_toTopOf="@+id/tvBookCount"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <LinearLayout
         android:id="@+id/inventoryBox"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
+        android:layout_width="97dp"
+        android:layout_height="90dp"
         android:layout_marginStart="20dp"
+        android:layout_marginBottom="96dp"
         android:background="#44000000"
         android:orientation="vertical"
         android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgMainCharacter"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgMainCharacter">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.946">
 
         <TextView
             android:id="@+id/tvRes1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="자원1: 0"
+            android:text="전필: 0"
             android:textColor="#FFFFFF" />
 
         <TextView
@@ -61,7 +111,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="자원2: 0"
+            android:text="전선: 0"
             android:textColor="#FFFFFF" />
 
         <TextView
@@ -69,9 +119,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="자원3: 0"
+            android:text="교양: 0"
             android:textColor="#FFFFFF" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvBookCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="📘 : 0"
+        android:textColor="#FF5722"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnBattle"
+        app:layout_constraintStart_toStartOf="@+id/btnBattle"
+        app:layout_constraintEnd_toEndOf="@+id/btnBattle" />
 
     <Button
         android:id="@+id/btnAdventure"
@@ -79,25 +142,31 @@
         android:layout_height="70dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginBottom="10dp"
-        android:text="어드벤쳐"
+        android:text="공부"
+        android:textStyle="bold"
+        android:backgroundTint="#56BBE6"
         app:layout_constraintBottom_toTopOf="@+id/adventureGauge"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnCraft"
-        android:layout_width="100dp"
+        android:layout_width="110dp"
         android:layout_height="50dp"
-        android:text="제작"
+        android:text="시험"
+        android:textStyle="bold"
+        android:backgroundTint="#2095D0"
         app:layout_constraintBottom_toTopOf="@+id/btnAdventure"
         app:layout_constraintEnd_toEndOf="@+id/btnAdventure" />
 
     <Button
         android:id="@+id/btnBattle"
-        android:layout_width="100dp"
+        android:layout_width="110dp"
         android:layout_height="50dp"
         android:layout_marginEnd="5dp"
-        android:text="전투"
+        android:text="투척!!"
+        android:textStyle="bold"
+        android:backgroundTint="#0A529C"
         app:layout_constraintBottom_toTopOf="@+id/btnAdventure"
         app:layout_constraintEnd_toStartOf="@+id/btnCraft" />
 
