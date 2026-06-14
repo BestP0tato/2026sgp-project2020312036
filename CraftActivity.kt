@@ -1,78 +1,98 @@
 package com.example.a2026sgp_project2020312036
 
+import android.app.Activity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class CraftActivity : AppCompatActivity() {
 
-    private val arrowOptions = listOf("↑", "↓", "←", "→")
-    private var targetSequence = mutableListOf<String>()
+    private val arrowList = mutableListOf<String>()
+    private val userInputs = mutableListOf<String>()
+    private var currentIndex = 0
 
-    private lateinit var tvTargetArrows: TextView
+    private lateinit var tvArrow0: TextView
+    private lateinit var tvArrow1: TextView
+    private lateinit var tvArrow2: TextView
+    private lateinit var tvArrow3: TextView
+    private lateinit var tvArrow4: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_craft)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
-        tvTargetArrows = findViewById(R.id.tvTargetArrows)
-        val btnBackToMain = findViewById<Button>(R.id.btnBackToMain)
+        tvArrow0 = findViewById(R.id.tvArrow0)
+        tvArrow1 = findViewById(R.id.tvArrow1)
+        tvArrow2 = findViewById(R.id.tvArrow2)
+        tvArrow3 = findViewById(R.id.tvArrow3)
+        tvArrow4 = findViewById(R.id.tvArrow4)
+
         val btnUp = findViewById<Button>(R.id.btnUp)
         val btnDown = findViewById<Button>(R.id.btnDown)
         val btnLeft = findViewById<Button>(R.id.btnLeft)
         val btnRight = findViewById<Button>(R.id.btnRight)
 
-        btnBackToMain.setOnClickListener {
-            finish()
+        generateArrows()
+
+        btnUp.setOnClickListener { handleInput("↑") }
+        btnDown.setOnClickListener { handleInput("↓") }
+        btnLeft.setOnClickListener { handleInput("←") }
+        btnRight.setOnClickListener { handleInput("→") }
+    }
+
+    private fun generateArrows() {
+        val arrows = listOf("↑", "↓", "←", "→")
+        arrowList.clear()
+        userInputs.clear()
+        currentIndex = 0
+
+        for (i in 0..4) {
+            arrowList.add(arrows.random())
         }
 
-        generateNewSequence()
+        tvArrow0.text = arrowList[0]
+        tvArrow1.text = arrowList[1]
+        tvArrow2.text = arrowList[2]
+        tvArrow3.text = arrowList[3]
+        tvArrow4.text = arrowList[4]
 
-        btnUp.setOnClickListener { checkInput("↑") }
-        btnDown.setOnClickListener { checkInput("↓") }
-        btnLeft.setOnClickListener { checkInput("←") }
-        btnRight.setOnClickListener { checkInput("→") }
+        resetArrowColors()
     }
 
-    private fun generateNewSequence() {
-        targetSequence.clear()
-        for (i in 1..5) {
-            targetSequence.add(arrowOptions.random())
-        }
-        updateTargetUI()
-    }
+    private fun handleInput(input: String) {
+        if (currentIndex < arrowList.size) {
+            if (arrowList[currentIndex] == input) {
+                highlightArrow(currentIndex, android.graphics.Color.GREEN)
+                currentIndex++
 
-    private fun updateTargetUI() {
-        tvTargetArrows.text = targetSequence.joinToString(" ")
-    }
-
-    private fun checkInput(input: String) {
-        if (targetSequence.isNotEmpty()) {
-            val currentTarget = targetSequence[0]
-
-            if (input == currentTarget) {
-                targetSequence.removeAt(0)
-                updateTargetUI()
-
-                if (targetSequence.isEmpty()) {
-                    Toast.makeText(this, "제작 성공! 소모품을 획득했습니다.", Toast.LENGTH_SHORT).show()
-                    generateNewSequence()
+                if (currentIndex == arrowList.size) {
+                    setResult(Activity.RESULT_OK)
+                    finish()
                 }
             } else {
-                Toast.makeText(this, "틀렸습니다! 다시 입력하세요.", Toast.LENGTH_SHORT).show()
-                generateNewSequence()
+                setResult(Activity.RESULT_CANCELED)
+                finish()
             }
         }
+    }
+
+    private fun highlightArrow(index: Int, color: Int) {
+        when (index) {
+            0 -> tvArrow0.setTextColor(color)
+            1 -> tvArrow1.setTextColor(color)
+            2 -> tvArrow2.setTextColor(color)
+            3 -> tvArrow3.setTextColor(color)
+            4 -> tvArrow4.setTextColor(color)
+        }
+    }
+
+    private fun resetArrowColors() {
+        val defaultColor = android.graphics.Color.BLACK
+        tvArrow0.setTextColor(defaultColor)
+        tvArrow1.setTextColor(defaultColor)
+        tvArrow2.setTextColor(defaultColor)
+        tvArrow3.setTextColor(defaultColor)
+        tvArrow4.setTextColor(defaultColor)
     }
 }
